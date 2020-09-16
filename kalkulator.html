@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>warhammer Pomocnik Gracza i MG</title>
+	
+	<meta name="description" content="Wygeneruj imię postaci, przelicz ile ZK będziesz musiał wydać na zakupach w mieście i inne opcje pomocnicze." />
+	<meta name="keywords" content="warhammer, kalkulator, złota korona, karczma, koszt zbroi, karczma, szylingi, pensy, generator, imion, postaci, wiedza, krasnoludy, niziołki, elfy" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="rasa.js"></script>
+    <script type="text/javascript" src="Generator.js"></script>
+		
+</head>
+
+<body onload="change_slaid()" >
+<div id="container" >
+
+	<div id="box1">
+	
+		<div class="rectangle1">
+		
+			<div class="komet">
+			
+				<img src="komet.png" style="margin-bottom:5px;" />
+			
+			</div>
+			
+				<button class="button" style="margin-top: 20px;">
+				
+				<a href="imiona.html" class="link">
+				Generator </br>
+				imion </br>
+				postaci</br>
+				</a>
+				</button>
+			
+		
+		</div>
+		
+		<div class="rectangle1">
+		
+		<button class="button" style="margin-top: 35px; margin-bottom: 35px;">
+		
+		<a href="kalkulator.html" class="link">
+		Zapraszamy</br>
+		do 
+		wydania </br>
+		złotych
+		koron</br>
+		</a>
+		
+		</button>
+		
+		<div class="komet" style="margin-top:10px; border-top: 2px dotted #c11e02; border-bottom:none; " >
+		
+			<img src="coins.png" style="margin-top:5px;"/>
+		
+		</div>
+	</div>
+	</div>
+	
+	<div id="box2">
+		 <div style=" text-align:center; font-size: 30px; font-weight:900; margin-top:5px;">Generator postaci! </div><br/><br/>
+			<div class="boxCal">
+				
+				 <label for="selector"  >Wybierz Rasę:</label>
+					<select class="selector" id="rase" style="margin-left:153px;"	>
+							<option value="l">Ludzie</option>
+							<option value="e">Elfy</option>
+							<option value="k">Krasnoludy</option>
+							<option value="n">Niziołki</option>
+					</select> <br/>	
+			
+				 <label for="selector" >Pochodzenie:</label>
+					<select class="selector" id="origin" style="margin-left:88px;">
+							<optgroup label="Ludzie i Niziołki">
+							<option value="1">Bretonia</option> <!-- ludzie i niziolki-->
+							<option value="2">Imperium</option> <!-- ludzie i niziolki-->
+							<option value="3">Kislev</option> <!-- ludzie i niziolki-->
+							<option value="4">Estalia</option> <!-- ludzie i niziolki-->
+							<option value="5">Tilea</option>  <!-- ludzie i niziolki-->
+							<option value="6">Arabia</option> <!-- ludzie i niziolki-->
+							<option value="7">Kataj</option>  <!-- ludzie i niziolki-->
+							<option value="8">Kraina Zgromadzenia</option>  <!-- ludzie i niziolki-->
+							<option value="9">Księstwa Graniczne</option>  <!-- ludzie i niziolki-->
+							</optgroup> 
+							<optgroup label="Krasnoludy">
+							<option value="10">Zhufbar</option>  <!-- Krasnoludy-->
+							<option value="11">Karak Varn</option>  <!-- Krasnoludy-->
+							<option value="12">Karaz-a-Karak</option>  <!-- Krasnoludy-->
+							<option value="13">Karak Odro Karaz</option> <!-- Krasnoludy-->
+							<option value="14">Karak Azul</option> <!-- Krasnoludy-->
+							<option value="15">Karak Azgal</option> <!-- Krasnoludy-->
+							<option value="16">Karak Hirn</option> <!-- Krasnoludy-->
+							<option value="17">Karak Izor</option> <!-- Krasnoludy-->
+							<option value="18">Karak Norn</option> <!-- Krasnoludy-->
+							<option value="19">Barak Varr</option> <!-- Krasnoludy-->
+							</optgroup>
+							<optgroup label="Elfy">
+							<option value="ult">Ultuan</option>  <!-- Elfy -->
+							<option value="21">Lasy Athel Loren</option>  <!-- Elfy -->
+							<option value="22">Lasy Asrai</option>  <!-- Elfy -->
+							</optgroup>
+					</select><br/>					
+				 <label for="selector"  >Wybierz Płeć:</label>
+					<select class="selector" id="male" style="margin-left:0px; margin-right:5px;">
+							<option value="m">Mężczyzna</option>
+							<option value="z">Kobieta</option>
+					</select>	
+					
+					<input type="button" class="button" onclick="generation()" style="width:200px; height:40px; margin-left:0px; margin-top:10px; border-style:none;" value="Generuj"></input>
+			
+					
+
+			</div>
+			
+			<div class="boxCal"	id="change">	
+			
+			</div >
+			<br/>
+			
+			
+			<div style=" text-align:center; font-size: 30px; font-weight:900; margin-top:5px; clear:both;">Twoja Postać to: </div><br/><br/><br/>
+				<div class="spis">
+					<div class="hero" style="float:left;">
+					Imię: 
+					</div>
+					
+					<div class="hero2" id="nazwa" >Janusz</div>
+					
+					<div class="hero" style="float:left;">
+					Nazwisko: 
+					</div>
+					
+					<div class="hero2" id="nazwisko" >Tracz</div>		
+					
+					<div class="hero" style="float:left;">
+					Sylwetka:
+					</div>
+					
+					<div class="hero2" id="kilo">Gruby</div>
+					
+					<div class="hero" style="float:left;">
+					Wiek:
+					</div>
+					
+					<div class="hero2" id="age">123 lata</div>
+					
+					<div class="hero" style="float:left;">
+					Wzrost:
+					</div>
+					
+					<div class="hero2" id="wzrost" > 175cm</div>
+					
+					<div class="hero" style="float:left;">
+					Kolor włosów:
+					</div>
+					
+					<div class="hero2" id="wlosy" >Brązowe</div>
+					
+					<div class="hero" style="float:left;">
+					Kolor oczu: 	
+					</div>	
+					
+					<div class="hero2" id="oczy" >Czerwone</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="spis">Informacje: <br/> 
+					1. Proszę wybrać Rasę, Pochodzenie oraz Płeć.<br/>
+					2. Pochodzenie determinuje Postać np. Elfy wysokie są tylko z Ultuanu więc jeśli zostanie wybrane inne to Generator wybieże domyśle ustawienie. <br/>
+					3. Generator czerpię z podręcznika do drugiej jak i Czwartej edycji<br/>
+					4. Tu stworzysz stylistykę postaci lecz umiejętności oraz talenty musisz zrobić sam.</br>
+			<div id="TabCech">	
+					<div class="cechy">WW</div>
+					<div class="cechy">US</div>
+					<div class="cechy">S</div>
+					<div class="cechy">WT</div>
+					<div class="cechy">I</div>
+					<div class="cechy">ZW</div>
+					<div class="cechy">ZR</div>	
+					<div class="cechy">INT</div>
+					<div class="cechy">SW</div>	
+					<div class="cechy">OGD</div><div style="clear:both;"></div>
+
+					<div class="cecha" id="WW">22</div>
+					<div class="cecha" id="US">22</div>
+					<div class="cecha" id="S">22</div>
+					<div class="cecha" id="WT">22</div>
+					<div class="cecha" id="I">22</div>
+					<div class="cecha" id="ZW">22</div>
+					<div class="cecha" id="ZR">22</div>
+					<div class="cecha" id="INT">22</div>
+					<div class="cecha" id="SW">22</div>
+					<div class="cecha" id="OGD">22</div><div style="clear:both;"></div>
+			</div>
+			</div>
+	</div>
+	
+	<div id="footer">
+	2020 &copy; Sebastian Kacperski - Pmocnik Gracza w RPG
+	</div>
+
+
+
+
+</div>
+
+</body onload="tabele()">
+</html>

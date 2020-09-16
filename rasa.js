@@ -9,7 +9,7 @@ function change_slaid()
 {
 	
 	if(numer>3) numer=1;
-	var png = "<img src=\"photo/t"+numer+".png\"/>";
+	var png = "<img src=\"t"+numer+".png\"/>";
 	document.getElementById("change").innerHTML = png;
 	
 
